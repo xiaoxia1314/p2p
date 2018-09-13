@@ -1,0 +1,69 @@
+//引入头部样式
+@import "header.less";
+
+// 设置背景图片
+#fearth{
+    .row{
+        &>div{
+            background: url('../../images/feature01.png') no-repeat left center;
+            padding-left: 80px;
+        }
+        &>div:nth-of-type(2){
+            background: url('../../images/feature02.png') no-repeat left center;
+        }
+        &>div:nth-of-type(3){
+            background: url('../../images/feature03.png') no-repeat left center;
+        }
+    }
+}
+// 进行中借款
+.panel-default > .panel-heading{
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    border-bottom: 1px solid #ccc;
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0px;
+        padding: 10px 0px;
+        color: #2e8ece;
+        border-bottom: 3px #2e8ece solid;
+    }
+    a{
+        margin-top: 20px;
+    }
+}
+.panel{
+    border: none;
+    box-shadow:none;
+}
+// 表格设置媒介
+@media all and (max-width:610px){
+    .tigger{
+        display: none;
+    }
+}
+
+// ul li 设置样式
+.panel-body{
+    padding: 0px;
+    ul{
+        list-style: none;
+        padding: 0px;
+        li{
+            line-height: 34px;
+            border-bottom: 1px dotted #ccc;
+            a{
+                color: #333;
+                text-decoration: none;
+                &:hover{
+                    color: #00a8ff;
+                }
+            }
+        }
+    }
+}
+
+// 引入尾部样式
+@import "footer.less";
