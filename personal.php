@@ -95,5 +95,6 @@
 <script src="./lib/bootstrap/js/bootstrap.js"></script>
 <script src="./dist/js/index.min.js"></script>
 <script src="./src/js/fold.js"></script>
+<script></script>
 </body>
 </html>
