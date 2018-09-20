@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./lib/bootstrapvalidator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="./dist/css/register.min.css">
+    <link rel="stylesheet" href="./dist/css/personal.min.css">
 
     <title>Document</title>
 </head>
@@ -35,26 +36,25 @@
     <div class="panel-heading">用户登录</div>
     <div class="panel-body">
         
-         <form class="form-horizontal" id="regForm">
+         <form class="form-horizontal" id="loginForm">
              <!-- 用户名 -->
             <div class="form-group">
                 <label class="col-sm-3 control-label">用户名</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" name='username'  placeholder="请输入用户名" autocomplete="off">
+                <input type="text" class="form-control" name='username'  autocomplete="off">
                 </div>
             </div>
             <!-- 密码 -->
             <div class="form-group">
                 <label class="col-sm-3 control-label">密码</label>
                 <div class="col-sm-9">
-                <input type="password" class="form-control" name='password' placeholder="请输入密码" >
+                <input type="password" class="form-control" name='password' >
                 </div>
             </div>
             <!-- 登录的按钮 -->
             <div class="form-group">
                 <div class="col-sm-offset-5 col-sm-7">
-                <button type="submit" class="btn btn-success">登录</button>
-                <a href="login.php" class="">新用户,马上注册</a>
+                <button type="submit" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">登录</button>
                 </div>
             </div>
         </form>
@@ -62,10 +62,32 @@
     </div>
 </div>
 
+
+
+
+<!-- 引入尾部 -->
 <?php
     require_once('footer.php');
 ?>
     
+<!-- 模态框 -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalTitle">标题</h4>
+      </div>
+      <div class="modal-body" id='loginModalContent'>
+       内容
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="toperson" data-dismiss="modal">跳转到个人中心</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         
 
 <script src="./lib/jquery/jquery.min.js"></script>
@@ -73,5 +95,10 @@
 <script src="./lib/bootstrapvalidator/js/bootstrapValidator.min.js"></script>
 <script src="./dist/js/index.min.js"></script>
 <script src="./dist/js/register.min.js"></script>
+<script>
+     $('#toperson').on('click',function(){
+        location.href='./personal.php';
+    })
+</script>
 </body>
 </html>

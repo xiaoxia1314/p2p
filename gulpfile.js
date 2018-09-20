@@ -14,6 +14,7 @@ var reName = require('gulp-rename');
 var cleanCss = require('gulp-clean-css');
 // 热刷新
 var livereload=require('gulp-livereload');
+var babel=require('gulp-babel');
 
 
 gulp.task('lessTask', function () {
@@ -43,6 +44,9 @@ gulp.task('sassTask', function () {
 
 gulp.task('uglifyJs', function () {
     gulp.src('./src/js/*.js') //源文件路径
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(uglify()) //压缩成js
         .pipe(reName(function (path) {
             path.basename += ".min";  //更改css的名字

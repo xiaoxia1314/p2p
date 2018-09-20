@@ -13,16 +13,7 @@
     <?php 
       include_once("./header.php");
     ?>
-    <!-- <div class="container">
-        <h4>投资列表</h4>
-
-        <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">全部</button>
-            <button type="button" class="btn btn-default">招标中</button>
-            <button type="button" class="btn btn-default">还款中</button>
-        </div>
-
-    </div> -->
+   <!-- 借款的方式 -->
     <div class="container" id="application">
         <div class="row">
             <!-- 信用贷 -->
@@ -39,7 +30,7 @@
                             <li>身份认证</li>
                             <li>视频认证</li>
                         </ul>
-                        <p class="talign"><a href="#" class="btn btn-primary">立即申请</a></p>
+                        <p class="talign"><a href="./borrow_apply.php?id=t1" class="btn btn-primary">立即申请</a></p>
                     </div>
                 </div>
             </div>
@@ -57,7 +48,7 @@
                             <li>身份认证</li>
                             <li>视频认证</li>
                         </ul>
-                        <p class="talign"><a href="#" class="btn btn-primary">立即申请</a></p>
+                        <p class="talign"><a href="./borrow_apply.php?id=t2" class="btn btn-primary">立即申请</a></p>
                     </div>
                 </div>
             </div>
@@ -75,7 +66,7 @@
                             <li>身份认证</li>
                             <li>视频认证</li>
                         </ul>
-                        <p class="talign"><a href="#" class="btn btn-primary">立即申请</a></p>
+                        <p class="talign"><a href="./borrow_apply.php?id=t3" class="btn btn-primary">立即申请</a></p>
                     </div>
                 </div>
             </div>

@@ -1,46 +1,117 @@
 //引入头部样式
 @import "header.less";
 
-// 个人导航
-.panel-group .panel{
-    border-radius: 0px;
-}
-.panel-group .panel + .panel{
-    margin: 0px;
-}
-.panel-heading{
-    border-radius: 0px;
-    background-color: #F5F5F5;
-    a{
-        color: #337ab7;
-        text-decoration: none;
-        font-size: 14px;
-    }
-}
-
-.panel-body{
-    padding: 0px;
-    ul{
-        list-style: none;
-        padding: 0px;
-        margin: 0px;
-        li{
-            height: 40px;
-            line-height: 40px;
-            padding-left: 40px;
-        }
-    }
-}
+@import "leftnav.less";
 
 // 实名认证
 
-.form-horizontal{
-    width: 400px;
-    margin: 20px auto;
+
+#personal{
+    #perbtn{
+        display: none;
+    }
+    .message{
+        padding-bottom: 16px;
+        border-bottom: 1px solid #ddd;
+        .img-thumbnail{
+            padding: 10px;
+            width: 94px;
+        }
+        .info{
+            margin-top: 6px;
+            margin-left: 15px;
+        }
+    }
+    .row{
+        // text-align: center;
+        span{
+            color: #337ab7;
+        }
+    }
+    .mg{
+        margin: 10px 2px;
+    }
+    .talign{
+        text-align: center;
+        margin-top: 16px;
+    }
+    .col-md-4{
+        margin-top: 20px;
+    }
+    // 认证
+    .ident{
+        .h120{
+            height: 120px;
+        }
+        .mes_right{
+            background: url('../../images/shiming.png') no-repeat;
+            padding-left: 60px;
+            h5{
+                font-size: 14px;
+                font-weight: bold;
+            }
+            p{
+                font-size: 13px;
+                a{
+                    margin-left: 6px;
+                }
+            }
+        }
+        .bg1{
+            background: url('../../images/shouji.jpg') no-repeat;
+        }
+        .bg2{
+            background: url('../../images/youxiang.jpg') no-repeat;
+        }
+        .bg3{
+            background: url('../../images/baozhan.jpg') no-repeat;
+        }
+        p{
+            font-size: 13px;
+        }
+    }
+}
+#person{
+    padding: 15px;
 }
 
-
-
-
+// 左侧媒体查询
+@media all and (max-width:768px){
+    #personal{
+        overflow-x: hidden;
+    }
+    .rel{
+        position: relative;
+        #perbtn{
+            position: absolute;
+            top: 202px;
+            padding: 20px 8px;
+            display: block!important;
+            span{
+                color:#fff;
+            }
+        }
+    }
+    .canvasoff{
+        position: relative;
+        left: 0px;
+        transition: all 1s;
+       
+    }
+    .canvasoff-left{
+        position: absolute;
+        left: -48%;
+        z-index:998;
+    }
+    .canvasoff-btn{
+        position: absolute;
+        top: 34%;
+        padding: 30px 8px;
+        z-index: 999;
+    }
+    .active1{
+        left: 50%;
+    }
+}
 // 引入尾部样式
 @import "footer.less";

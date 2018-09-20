@@ -16,12 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php">首页</a></li>
-        <li><a href="#">小强</a></li>
-        <li><a href="#">充值</a></li>
-        <li><a href="#">注销</a></li>
-        <li><a href="register.php">注册</a></li>
-        <li><a href="login.php">登录</a></li>
+        <li id='appto'><a href="index.php">首页</a></li>
         <li><a href="#">帮助</a></li>
         <li><a href="#" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<img src='./images/contract.png' />">联系客服</a></li>
         
@@ -29,3 +24,20 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script>
+  $.get('./api/checksession.php',function(data){
+    if(data.isStatus){
+      var htmlstr=`<li><a href="#">${data.username}</a></li>
+        <li><a href="#">充值</a></li>
+        <li><a href="./api/loginOut.php">注销</a></li>`;
+        //追加到元素中
+        $('#appto').after(htmlstr);
+    }
+    else{
+      var htmlstr=`<li><a href="register.php">注册</a></li>
+        <li><a href="login.php">登录</a></li>`;
+        $('#appto').after(htmlstr);
+    }
+  },"json")
+</script>

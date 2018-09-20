@@ -70,6 +70,13 @@
                 <input type="text" class="form-control" name="phone" placeholder="请输入手机号码">
                 </div>
             </div>
+            <!-- 头像 -->
+            <!-- <div class="form-group">
+                <label for="exampleInputFile" class="col-sm-3 control-label">File input</label>
+                <div class="col-sm-9">
+                    <input type="file" id="exampleInputFile" name='filepic'>
+                </div>
+            </div> -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-9">
                 <button type="submit" class="btn btn-success">注册</button>
@@ -84,7 +91,24 @@
 <?php
     require_once('footer.php');
 ?>
-    
+
+<!-- 模态框 -->
+<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="regModalTitle">标题</h4>
+      </div>
+      <div class="modal-body" id='regModalContent'>
+       内容
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="tologin" data-dismiss="modal">跳转到登录页面</button>
+      </div>
+    </div>
+  </div>
+</div>
         
 
 <script src="./lib/jquery/jquery.min.js"></script>
@@ -92,5 +116,10 @@
 <script src="./lib/bootstrapvalidator/js/bootstrapValidator.min.js"></script>
 <script src="./dist/js/index.min.js"></script>
 <script src="./dist/js/register.min.js"></script>
+<script>
+    $('#tologin').on('click',function(){
+        location.href='./login.php';
+    })
+</script>
 </body>
 </html>
