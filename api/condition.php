@@ -6,15 +6,14 @@
      //获取当前缓冲的id
      $userid=$_SESSION['userid'];
      $data=[
-         ["value"=>0,"name"=>"信用贷"],
-         ["value"=>1,"name"=>"车易贷"],
-         ["value"=>2,"name"=>"房易贷"]
-     ];
+        ["value"=>0,"name"=>"信用贷"],
+        ["value"=>0,"name"=>"车易贷"],
+        ["value"=>0,"name"=>"房易贷"]
+    ];
     //创建sql语句
     $sql="select * from borrowinfo where userid=$userid";
     $rs=mysqli_query($link,$sql);
-    
-    while($result=mysqli_fetch_assoc($rs)){
+     while($result=mysqli_fetch_assoc($rs)){
         if($result["borrowType"]=='信用贷'){
             $data[0]["value"] += $result["borrowAmount"];
         }
